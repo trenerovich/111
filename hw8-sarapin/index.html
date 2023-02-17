@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    // 1
+    const arr =  [1, 2, 3, 4, 5, 6, 7];
+    let item = 5;
+    Array.prototype.remove = function (value) {
+        this.splice(this.indexOf(value), 1);
+    }
+
+    arr.remove(item);
+    console.log(arr);
+
+
+    // 2
+    let array = [1, 2, 'string', 3, 'string', 4, 5, 'string', 6, 'string'];
+
+    function findArithmeticMean() {
+      let numbers = array.filter(x => !isNaN(x));
+
+      if (numbers.length === 0)
+        return 0;
+
+      let sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+
+      return sum / numbers.length;
+    }
+
+    console.log(findArithmeticMean());
+
+
+    // 3
+    function replaceString(string, pattern){
+
+        let st_pt = pattern.join('');
+
+        return string.replace(RegExp(`[${st_pt}]`, 'gi'), '')
+
+    }
+
+    console.log(replaceString('Hello world', ['l', 'd']))
+  </script>
+</head>
+<body>
+
+</body>
+</html>

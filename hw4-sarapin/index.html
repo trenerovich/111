@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+       const userYear = prompt('Year of birth:');
+       const userCity = prompt('Your city:');
+        const userSport = prompt('Your favorite sport:');
+
+       if (userYear === null){
+           alert(`Too bad you didn't enter your sport year of birth:(`);
+       };
+
+        if (userCity === 'London'){
+            alert(`You are ${2023 - userYear} years old. You live in a capital of UK`);
+        }
+        else if (userCity === 'london'){
+            alert(`You are ${2023 - userYear} years old. You live in a capital of UK`);
+        }
+        else if (userCity === 'Washington'){
+            alert(`You are ${2023 - userYear} years old. You live in a capital of USA`);
+        }
+        else if (userCity === 'washington'){
+            alert(`You are ${2023 - userYear} years old. You live in a capital of USA`);
+        }
+        else if (userCity === 'Kyiv'){
+            alert(`You are ${2023 - userYear} years old. You live in a capital of Ukraine`);
+        }
+        else if (userCity === 'kyiv'){
+            alert(`You are ${2023 - userYear} years old. You live in a capital of Ukraine`);
+        }
+        else if (userCity === null){
+            alert(`Too bad you didn't enter your city :(`);
+        }
+        else {
+            alert(`You are ${2023 - userYear} years old. You live in ${userCity[0].toUpperCase()}${userCity.slice(1)} town`);
+        };
+
+
+        if (userSport === 'boxing'){
+            alert(`Cool! Do you want to become Vitaly Klitschko?`);
+        }
+        else if (userSport === 'wrestling'){
+            alert(`Cool! Do you want to become Jean Beleniuk?`);
+        }
+        else if (userSport === 'swimming'){
+            alert(`Cool! Do you want to become Michael Fred Phelps?`);
+        }
+        else if (userSport === null){
+            alert(`Too bad you didn't enter your sport :(`);
+        }
+        else {
+            alert(`Would you like to try boxing, wrestling or swimming?`);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

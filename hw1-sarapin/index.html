@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = 111;
+    let num2 = 111n;
+    console.log(typeof num1);
+    console.log(typeof num2);
+
+    let str = 'Hello world!';
+    console.log(typeof str);
+    console.log(typeof`Hello world! num1`);
+    console.log(typeof'Hello world! ${num1}');
+
+    let nameChecked = true;
+    console.log(typeof nameChecked);
+
+    let cookie = null;
+    console.log(typeof null);
+
+    let age;
+    console.log(typeof age);
+
+    let user = {
+        name: 'Dmytro',
+        age: 28
+    };
+    const userNameKey = 'name';
+    console.log(typeof user,user);
+    console.log(typeof user.name,user.name);
+    console.log(typeof user[userNameKey],user.name);
+    console.log(typeof user.age,user.age);
+
+    console.log(typeof test);
+
+    let user2 = ['Dmytro', 28];
+    console.log(user2 [0]);
+
+    let sym = Symbol('go');
+    console.log(typeof sym);
+</script>
+
+</body>
+</html>

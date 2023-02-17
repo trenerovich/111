@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+      // let x = prompt('Введите натуральное число');
+      // let n = prompt('Введите натуральное число степени');
+      //
+      // function pow() {
+      //     let result = x**n;
+      //     if (n % 1 !== 0) { alert('Это не натуральное число!'); } else {
+      //         alert(`Итог возведения в степень: ${result}`)};
+      //     return result;
+      // }
+      // pow();
+
+      function sayHi() {   // (1) создаём
+          alert( "Привет" );
+      }
+
+      let func = sayHi();    // (2) копируем
+
+      alert(func); // Привет     // (3) вызываем копию (работает)!
+      sayHi(); // Привет    //     эта тоже все ещё работает (почему бы и нет)
+  </script>
+</head>
+<body>
+
+</body>
+</html>
