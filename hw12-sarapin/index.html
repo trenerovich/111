@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+  <img src="" alt="" height="500" width="700">
+  <button>Сменить</button>
+
+</body>
+<script>
+    const files = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'];
+    const changeImg = ()=> {
+        const rand = Math.ceil(Math.random() * files.length)
+        document.querySelector('img').src = 'img/' + rand + '.jpg'
+    }
+    changeImg();
+
+    document.querySelector('button').addEventListener('click', changeImg);
+
+</script>
+</html>
