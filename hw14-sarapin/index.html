@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let generateList = function generateList(array) {
+    let ul = document.createElement('ul');
+
+    array.forEach(function(el) {
+      let li = document.createElement('li');
+      let childElement;
+
+      if (Array.isArray(el)) {
+        childElement = generateList(el);
+      } else {
+        childElement = document.createTextNode(el)
+      }
+
+      li.appendChild(childElement);
+      ul.appendChild(li);
+    })
+
+    return ul;
+  }
+  document.body.appendChild(generateList([1, 2, 3]));
+  document.body.appendChild(generateList([1, 2, [1.1, 1.2, 1.3], 3]))
+
+</script>
+
+</script>
+</body>
+</html>
