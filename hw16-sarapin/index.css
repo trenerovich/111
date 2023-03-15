@@ -1,0 +1,33 @@
+body{
+    background-color: #97d5ea;
+}
+.wrap-slider{
+    position:relative;
+}
+.slider{
+    border: double black 6px;
+    margin:0 auto;
+    height:480px;
+    width:720px;
+    overflow:hidden;
+}
+.slider img{
+    height:480px;
+    width:720px;
+}
+.slider-arrow {
+    position:absolute;
+    bottom:0;
+    font-size: 50px;
+    color:black;
+    cursor:pointer;
+}
+.slider-nav .slider-left {
+    display:none;
+    left:340px;
+    top: 240px;
+}
+.slider-nav .slider-right {
+    right:340px;
+    top: 240px;
+}
