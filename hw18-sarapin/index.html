@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="toggle/node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<ul class="gallery">
+    <li class="gallery__item js--gal_item"><img class="" src="./img/1.jpg" alt=""></li>
+    <li class="gallery__item js--gal_item"><img class="" src="./img/2.jpg" alt=""></li>
+    <li class="gallery__item js--gal_item"><img class="" src="./img/3.jpeg" alt=""></li>
+    <li class="gallery__item js--gal_item"><img class="" src="./img/4.jpg" alt=""></li>
+    <li class="gallery__item js--gal_item"><img class="" src="./img/5.jpeg" alt=""></li>
+    <li class="gallery__item js--gal_item"><img class="" src="./img/6.jpg" alt=""></li>
+</ul>
+<div class="modal js--modal">
+    <button class="modal__close js--modal__close">Close</button>
+    <button class="modal__prev js--modal__prev">Prev</button>
+    <div class="modal__content js--modal__content"><img src="./img/1.jpg" alt=""></div>
+    <button class="modal__next js--modal__next">Next</button>
+</div>
+<script>
+
+    $(document).ready(function() {
+        let $galleryItems = $('.js--gal_item');
+        let $modal = $('.js--modal');
+        let $modalImage = $('.js--modal__content img');
+        let $modalClose = $('.js--modal__close');
+        let $modalPrev = $('.js--modal__prev');
+        let $modalNext = $('.js--modal__next');
+
+
+        $galleryItems.on('click', function() {
+            let imageUrl = $(this).find('img').attr('src');
+            $modalImage.attr('src', imageUrl);
+            $modal.show();
+        });
+
+        $modalClose.on('click', function() {
+            $modal.hide();
+        });
+
+        $modalPrev.on('click', function() {
+            let $prevItem = $galleryItems.filter(':has(img[src="' + $modalImage.attr('src') + '"])').prev();
+            if ($prevItem.length) {
+                let prevImageUrl = $prevItem.find('img').attr('src');
+                $modalImage.attr('src', prevImageUrl);
+            }
+        });
+
+        $modalNext.on('click', function() {
+            let $nextItem = $galleryItems.filter(':has(img[src="' + $modalImage.attr('src') + '"])').next();
+            if ($nextItem.length) {
+                let nextImageUrl = $nextItem.find('img').attr('src');
+                $modalImage.attr('src', nextImageUrl);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
