@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Password Validation</h1>
+  <form>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" onkeyup="validatePassword()"><br>
+    <p id="uppercase"></p>
+    <p id="number"></p>
+    <p id="punctuation"></p>
+    <p id="length"></p>
+    <input type="submit" value="Submit">
+  </form>
+  <script>
+    function validatePassword() {
+      let password = document.getElementById("password").value;
+      let uppercaseRegex = /[A-Z]/;
+      let numberRegex = /\d/;
+      let punctuationRegex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/;
+
+      if (password.length < 8) {
+        document.getElementById("length").innerHTML = "Пароль должен быть не менее 8 символов";
+        document.getElementById("length").style.color = "red";
+      } else {
+        document.getElementById("length").innerHTML = "";
+      }
+
+      if (!uppercaseRegex.test(password)) {
+        document.getElementById("uppercase").innerHTML = "Пароль должен содержать хотя бы одну заглавную букву";
+        document.getElementById("uppercase").style.color = "red";
+      } else {
+        document.getElementById("uppercase").innerHTML = "";
+      }
+
+      if (!numberRegex.test(password)) {
+        document.getElementById("number").innerHTML = "Пароль должен содержать хотя бы одну цифру";
+        document.getElementById("number").style.color = "red";
+      } else {
+        document.getElementById("number").innerHTML = "";
+      }
+
+      if (!punctuationRegex.test(password)) {
+        document.getElementById("punctuation").innerHTML = "Пароль должен содержать хотя бы один знак препинания";
+        document.getElementById("punctuation").style.color = "red";
+      } else {
+        document.getElementById("punctuation").innerHTML = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
