@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Погода в Одесi</h1>
+<div id="weather"></div>
+
+<script>
+  $(document).ready(function() {
+    let url = "http://api.openweathermap.org/data/2.5/weather?q=Odessa&units=metric&APPID=5d066958a60d315387d9492393935c19";
+    $.getJSON(url, function(data) {
+      let temp = data.main.temp;
+      let pressure = data.main.pressure;
+      let description = data.weather[0].description;
+      let humidity = data.main.humidity;
+      let speed = data.wind.speed;
+      let deg = data.wind.deg;
+      let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+
+      let html = "<p>Температура: " + temp + " &#8451;</p>";
+      html += "<p>Тиск: " + pressure + " гПа</p>";
+      html += "<p>Опис: " + description + "</p>";
+      html += "<p>Вологість: " + humidity + " %</p>";
+      html += "<p>Швидкість вітру: " + speed + " м/с</p>";
+      html += "<p>Напрям вітру: " + deg + "&#176;</p>";
+      html += "<img src='" + icon + "' alt='weather icon'>";
+
+      $("#weather").html(html);
+    });
+  });
+</script>
+
+</body>
+</html>
